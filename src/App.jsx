@@ -6,9 +6,9 @@ import Form from "./components/Form";
 import React from "react";
 
 function App() {
-	const [name, setName] = useState("Rich");
+	const [name, setName] = useState("");
 	const handleClick = () => {
-		alert("You clicked my button");
+		alert("You clicked the button");
 	};
 	return (
 		<main>
