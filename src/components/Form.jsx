@@ -16,20 +16,23 @@ export default function Form() {
 		document.body.style.backgroundColor = "#" + randomColor;
 	};
 
-  const audio = new Audio("/keypress.mp3")
-  const start = () => {
-    audio.play()
-  }
+	// Remove /vite from start of mp3 url to make it work locally
+	const audio = new Audio("/vite/keypress.mp3");
+	const start = () => {
+		audio.play();
+	};
 	useEffect(() => {
 		setBg();
-    start();
-	},[title, body]);
-
-
+		start();
+	}, [title, body]);
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label>{title.length <= 10 ? "Blog title" : "Blog Title must be under ten characters"}</label>
+			<label>
+				{title.length <= 10
+					? "Blog title"
+					: "Blog Title must be under ten characters"}
+			</label>
 			<input
 				type="text"
 				required
